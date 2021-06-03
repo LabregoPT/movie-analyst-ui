@@ -13,8 +13,8 @@ node {
         sh 'npm test'
     }
     stage('Deploy') {
-        /**zip zipFile: 'UI.zip', archive: false, dir: 'UI'
-                archiveArtifacts artifacts: 'UI.zip', fingerprint: true*/
+        zip zipFile: 'UI.zip', archive: false, dir: 'UI'
+                archiveArtifacts artifacts: 'UI.zip', fingerprint: true
     }
 }
 
