@@ -16,6 +16,7 @@ pipeline {
             steps {
                 echo 'Build...'
                 sh 'cd UI; npm install -g mocha; npm install chai; npm install chai-http; npm install express'
+				sh 'npm version'
             }
              
         }
