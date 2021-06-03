@@ -16,4 +16,3 @@ node {
                 archiveArtifacts artifacts: 'UI.zip', fingerprint: true
     }
 }
-
