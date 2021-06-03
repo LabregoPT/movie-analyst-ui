@@ -15,7 +15,7 @@ pipeline {
         stage('Build') { 
             steps {
                 echo 'Build...'
-                sh 'cd UI; npm install -g mocha; npm install --save-dev chai; npm install'
+                sh 'cd UI; npm install -g mocha; npm install chai'
             }
              
         }
