@@ -15,7 +15,7 @@ pipeline {
         stage('Build') { 
             steps {
                 echo 'Build...'
-                sh 'cd UI; npm install -g mocha; npm install chai; npm install chai-http; npm install express; npm install'
+                sh 'cd UI; npm install -g mocha; npm install --production=false'
             }
              
         }
