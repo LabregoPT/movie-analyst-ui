@@ -3,7 +3,6 @@ pipeline {
   triggers {
     githubPush()
   }
-    tools {nodejs "NodeJs"}
     stages {
         stage('Checkout') {
             steps {
@@ -28,4 +27,3 @@ pipeline {
         }
     }
 }
-
