@@ -15,8 +15,7 @@ describe("API", () => {
   describe("/GET home", () => {
     it("it should GET any reply", done => {
       chai
-		.request('http://localhost:3030')
-        //.request(server)
+        .request(server)
         .get("/")
         .end((err, res) => {
           res.should.have.status(200);
