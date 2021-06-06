@@ -6,7 +6,8 @@ let chai = require("chai");
 let chaiHttp = require("chai-http");
 let server = require("../server");
 let should = chai.should();
-let host = 'http://'+backendHost+':3000/';
+let host = 'http://'+backendHost+':3030/';
+
 
 chai.use(chaiHttp);
 //Our parent block
@@ -18,9 +19,9 @@ describe("API", () => {
     it("it should GET any reply", done => {
       chai
         .request(server)
-        .get(host+'movies')
+        .get('/movies')
         .end((err, res) => {
-          res.should.have.status(200);
+          res.should.have.property('status',400);
           done();
         });
     });

@@ -10,22 +10,21 @@ pipeline {
                 echo 'Checkout...'
                 sh 'rm -rf UI; git clone https://github.com/LabregoPT/movie-analyst-ui.git UI'
             }
-            
+
         }
-        stage('Build') { 
+        stage('Build') {
             steps {
                 echo 'Build...'
                 sh 'cd UI; npm install -g mocha; npm install --production=false'
             }
-             
+
         }
         stage('Test') {
             steps {
                 echo 'Testing...'
-				sh 'cd UI; npm test'
+                                sh 'cd UI; npm test'
             }
-            
+
         }
     }
 }
-
