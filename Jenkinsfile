@@ -22,7 +22,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing...'
-                                sh 'cd UI; npm test'
+                sh 'cd UI; npm test'
             }
 
         }
