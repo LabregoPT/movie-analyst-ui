@@ -22,7 +22,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing...'
-				sh 'rm -rf API; git clone https://github.com/jeisonroa1/movie-analyst-api.git API; npm install; node server.js'
+				sh 'rm -rf API; git clone https://github.com/jeisonroa1/movie-analyst-api.git API; git checkout nosql; npm install; nohup node server.js &'
                 sh 'cd UI; npm test'
 				sh 'killall -9 node'
             }
