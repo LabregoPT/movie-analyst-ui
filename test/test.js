@@ -51,7 +51,7 @@ describe("UI", () => {
 		chai.request(server) 
 			.get('/publications')
 			.end(function(err, res){
-            expect(res.status).to.equal(205);
+            expect(res.status).to.equal(200);
           done();
         });
       });
