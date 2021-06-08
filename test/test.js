@@ -37,9 +37,9 @@ describe("UI", () => {
       });
   });
   describe("GET reviewers page", () => {
-    it("it should reply 200 over /reviewers", done => {
+    it("it should reply 200 over /authors", done => {
 		chai.request(server) 
-			.get('/reviewers')
+			.get('/authors')
 			.end(function(err, res){
             expect(res.status).to.equal(200);
           done();
