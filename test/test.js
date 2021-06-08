@@ -1,12 +1,13 @@
 process.env.NODE_ENV = "test";
-var backendHost = process.env.BACK_HOST || 'localhost';
+//var backendHost = process.env.BACK_HOST || 'localhost';
 
 //Require the dev-dependencies
 let chai = require("chai");
 let chaiHttp = require("chai-http");
 let expect = require("chai").expect;
 let should = chai.should();
-let host = 'http://'+backendHost+':3030';
+let server = require('../server');
+//let host = 'http://'+backendHost+':3030';
 
 
 chai.use(chaiHttp);
@@ -17,7 +18,7 @@ describe("UI", () => {
    */
   describe("GET home page", () => {
     it("it should reply 200 over /", done => {
-		chai.request(host) 
+		chai.request(server) 
 			.get('/')
 			.end(function(err, res){
             expect(res.status).to.equal(200);
@@ -27,7 +28,7 @@ describe("UI", () => {
   });
   describe("GET movies page", () => {
     it("it should reply 200 over /movies", done => {
-		chai.request(host) 
+		chai.request(server) 
 			.get('/movies')
 			.end(function(err, res){
             expect(res.status).to.equal(200);
@@ -37,7 +38,7 @@ describe("UI", () => {
   });
   describe("GET reviewers page", () => {
     it("it should reply 200 over /reviewers", done => {
-		chai.request(host) 
+		chai.request(server) 
 			.get('/reviewers')
 			.end(function(err, res){
             expect(res.status).to.equal(200);
@@ -47,7 +48,7 @@ describe("UI", () => {
   });
   describe("GET publications page", () => {
     it("it should reply 200 over /publications", done => {
-		chai.request(host) 
+		chai.request(server) 
 			.get('/publications')
 			.end(function(err, res){
             expect(res.status).to.equal(200);
